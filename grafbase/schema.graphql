@@ -2,4 +2,14 @@ type Post @model {
   id: ID!
   title: String!
   slug: String! @unique
+  content: String
+  author: User
+}
+
+type User @model {
+  id: ID!
+  username: String! @unique
+  email: Email
+  avatarUrl: URL
+  posts: [Post]
 }
